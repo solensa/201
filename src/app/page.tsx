@@ -1,113 +1,185 @@
-import Image from 'next/image'
+"use client";
+
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.7;
+    }
+  }, [videoRef]);
+
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const imageRef2 = useRef<HTMLImageElement | null>(null);
+  const imageRef3 = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      requestAnimationFrame(() => {
+        if (imageRef.current) {
+          const windowHeight = imageRef.current.offsetTop - 0.55 * window.innerHeight;
+          if (window.scrollY > windowHeight) {
+            const rotation = (window.scrollY - windowHeight) / 2 - 90;
+            if (rotation > 0) {
+              imageRef.current.style.transform = `perspective(200px) rotateX(${0}deg)`;
+              imageRef.current.style.opacity = `${1}`;
+            } else {
+              imageRef.current.style.transform = `perspective(200px) rotateX(${-rotation}deg) scale(${
+                1 + rotation / 90
+              })`;
+              imageRef.current.style.opacity = `${1 + rotation / 90}`;
+            }
+          } else {
+            imageRef.current.style.transform = `perspective(200px) rotateX(${-90}deg) `;
+            imageRef.current.style.opacity = `${0}`;
+          }
+        }
+        if (imageRef2.current) {
+          const windowHeight = imageRef2.current.offsetTop - 0.55 * window.innerHeight;
+          if (window.scrollY > windowHeight) {
+            const rotation = (window.scrollY - windowHeight) / 2 - 90;
+            if (rotation > 0) {
+              imageRef2.current.style.transform = `perspective(200px) rotateX(${0}deg)`;
+              imageRef2.current.style.opacity = `${1}`;
+            } else {
+              imageRef2.current.style.transform = `perspective(200px) rotateX(${-rotation}deg) scale(${
+                1 + rotation / 90
+              })`;
+              imageRef2.current.style.opacity = `${1 + rotation / 90}`;
+            }
+          } else {
+            imageRef2.current.style.transform = `perspective(200px) rotateX(${-90}deg) `;
+            imageRef2.current.style.opacity = `${0}`;
+          }
+        }
+        if (imageRef3.current) {
+          const windowHeight = imageRef3.current.offsetTop - 0.55 * window.innerHeight;
+          if (window.scrollY > windowHeight) {
+            const rotation = (window.scrollY - windowHeight) / 2 - 90;
+            if (rotation > 0) {
+              imageRef3.current.style.transform = `perspective(200px) rotateX(${0}deg)`;
+              imageRef3.current.style.opacity = `${1}`;
+            } else {
+              imageRef3.current.style.transform = `perspective(200px) rotateX(${-rotation}deg) scale(${
+                1 + rotation / 90
+              })`;
+              imageRef3.current.style.opacity = `${1 + rotation / 90}`;
+            }
+          } else {
+            imageRef3.current.style.transform = `perspective(200px) rotateX(${-90}deg) `;
+            imageRef3.current.style.opacity = `${0}`;
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // Cleanup the event listener on component unmount
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures the effect runs once after the initial render
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <>
+      <div className="parallax">
+        <div className="parallax1">
+          <div className="s201-container">
+            <h1 className="s201-title s201-title-201 ">2OI</h1>
+            <h1 className="s201-title">STUDIO</h1>
+            <video ref={videoRef} className="section-img" src="/5.mp4" autoPlay loop muted />
+          </div>
+
+          <img className="mountain-img" src={"/mountainsbg.png"} alt="colomountains background" />
+          <div className="products-container">
+            <h2 className="products-title">LET YOUR MIND LOOSE</h2>
+            <img
+              ref={imageRef}
+              className="wordreach-tile"
+              src={"/passimal-screen.svg"}
+              alt="product screen1"
             />
-          </a>
+            <img
+              ref={imageRef2}
+              className="wordreach-tile2"
+              src={"/wordreach-screen.svg"}
+              alt="product screen2"
+            />
+            <img
+              ref={imageRef3}
+              className="wordreach-tile3"
+              src={"/wordtree-screen.svg"}
+              alt="product screen3"
+            />
+            <div className="product-text-wrapper">
+              <div className="product-text">
+                <span className="product-title">Passimal</span>
+                <span className="product-desc">
+                  A fun and informative way of understanding how to improve your password.
+                </span>
+              </div>
+              <div className="product-text">
+                <span className="product-title">WordReach</span>
+                <span className="product-desc">
+                  Step into the exciting world of WordReach - the online word-building challenge!
+                </span>
+              </div>
+              <div className="product-text">
+                <span className="product-title">WordTree</span>
+                <span className="product-desc">
+                  A quick reference to the different types of English word.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="profiles-container">
+            <h2 className="products-title">MEET THE CREW</h2>
+            <img className="profile-tile" src={"/rob-portrait.png"} alt="product screen1" />
+            <img className="profile-tile" src={"/ben-portrait.jpeg"} alt="product screen2" />
+            <img className="profile-tile" src={"/tony-portrait.png"} alt="product screen3" />
+            <div className="product-text-wrapper">
+              <div className="product-text">
+                <span className="product-title">Rob</span>
+                <span className="product-desc">
+                  "I’m Rob, designer, developer and idea-maker. Catch me sailing at weekends!"
+                </span>
+              </div>
+              <div className="product-text">
+                <span className="product-title">Ben</span>
+                <span className="product-desc">
+                  "I’m Ben, I’m responsible for all the bugs you find. You’ll usually find me
+                  ignoring messages in a dark room”
+                </span>
+              </div>
+              <div className="product-text">
+                <span className="product-title">Tony</span>
+                <span className="product-desc">
+                  "I’m Tony, a product guy from London. Besides product, you'll also find me
+                  restoring classic cars!"
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="footer">
+        <Link href="https://instagram.com/2O1Studio" passHref={true}>
+          <img className="social-icon" src={"/instagram.svg"} alt="product screen1" />
+        </Link>
+        <Link href="https://www.facebook.com/2O1Studio" passHref={true}>
+          <img className="social-icon" src={"/facebook-f.svg"} alt="product screen1" />
+        </Link>
+        <Link href="https://www.linkedin.com/company/201studio" passHref={true}>
+          <img className="social-icon" src={"/linkedin-in.svg"} alt="product screen1" />
+        </Link>
+        <Link href="http://twitter.com/2O1Studio" passHref={true}>
+          <img className="social-icon" src={"/x-twitter.svg"} alt="product screen1" />
+        </Link>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </>
+  );
 }
