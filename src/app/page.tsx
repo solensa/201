@@ -159,8 +159,8 @@ export default function Home() {
               <div className="product-text">
                 <span className="product-title">Tony</span>
                 <span className="product-desc">
-                  &quot;I&#39;m Tony, a product guy from London. Besides product, you'll also find
-                  me restoring classic cars!&quot;
+                  &quot;I&#39;m Tony, a product guy from London. Besides product, you&#39;ll also
+                  find me restoring classic cars!&quot;
                 </span>
               </div>
             </div>
