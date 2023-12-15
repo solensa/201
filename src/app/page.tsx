@@ -97,49 +97,54 @@ export default function Home() {
           <img className="mountain-img" src={"/mountainsbg.png"} alt="colomountains background" />
           <div className="products-container">
             <h2 className="products-title">LET YOUR MIND LOOSE</h2>
-            <div className="product-col">
-              <img
-                ref={imageRef}
-                className="wordreach-tile"
-                src={"/passimal-screen.svg"}
-                alt="product screen1"
-              />
-              <div className="product-text">
-                <span className="product-title product-title-side">Passimal</span>
-                <span className="product-desc">
-                  A fun and informative way of understanding how to improve your password.
-                </span>
+            <Link href="https://passimal.201.studio" passHref={true}>
+              <div className="product-col">
+                <img
+                  ref={imageRef}
+                  className="wordreach-tile"
+                  src={"/passimal-screen.svg"}
+                  alt="product screen1"
+                />
+                <div className="product-text">
+                  <span className="product-title product-title-side">Passimal</span>
+                  <span className="product-desc">
+                    A fun and informative way of understanding how to improve your password.
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="product-col">
-              <img
-                ref={imageRef2}
-                className="wordreach-tile2"
-                src={"/wordreach-screen.svg"}
-                alt="product screen2"
-              />
-              <div className="product-text">
-                <span className="product-title">WordReach</span>
-                <span className="product-desc">
-                  Step into the exciting world of WordReach - the online word-building challenge!
-                </span>
+            </Link>
+            <Link href="https://wordreach.io" passHref={true}>
+              <div className="product-col">
+                <img
+                  ref={imageRef2}
+                  className="wordreach-tile2"
+                  src={"/wordreach-screen.svg"}
+                  alt="product screen2"
+                />
+                <div className="product-text">
+                  <span className="product-title">WordReach</span>
+                  <span className="product-desc">
+                    Step into the exciting world of WordReach - the online word-building challenge!
+                  </span>
+                </div>
               </div>
-            </div>
-
-            <div className="product-col">
-              <img
-                ref={imageRef3}
-                className="wordreach-tile3"
-                src={"/wordtree-screen.svg"}
-                alt="product screen3"
-              />
-              <div className="product-text">
-                <span className="product-title">WordTree</span>
-                <span className="product-desc">
-                  A quick reference to the different types of English word.
-                </span>
+            </Link>
+            <Link href="https://wordtree.info/" passHref={true}>
+              <div className="product-col">
+                <img
+                  ref={imageRef3}
+                  className="wordreach-tile3"
+                  src={"/wordtree-screen.svg"}
+                  alt="product screen3"
+                />
+                <div className="product-text">
+                  <span className="product-title">WordTree</span>
+                  <span className="product-desc">
+                    A quick reference to the different types of English word.
+                  </span>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="profiles-container">
             <h2 className="products-title">MEET THE CREW</h2>
