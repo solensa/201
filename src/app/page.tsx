@@ -97,37 +97,42 @@ export default function Home() {
           <img className="mountain-img" src={"/mountainsbg.png"} alt="colomountains background" />
           <div className="products-container">
             <h2 className="products-title">LET YOUR MIND LOOSE</h2>
-            <img
-              ref={imageRef}
-              className="wordreach-tile"
-              src={"/passimal-screen.svg"}
-              alt="product screen1"
-            />
-            <img
-              ref={imageRef2}
-              className="wordreach-tile2"
-              src={"/wordreach-screen.svg"}
-              alt="product screen2"
-            />
-            <img
-              ref={imageRef3}
-              className="wordreach-tile3"
-              src={"/wordtree-screen.svg"}
-              alt="product screen3"
-            />
-            <div className="product-text-wrapper">
+            <div className="product-col">
+              <img
+                ref={imageRef}
+                className="wordreach-tile"
+                src={"/passimal-screen.svg"}
+                alt="product screen1"
+              />
               <div className="product-text">
-                <span className="product-title">Passimal</span>
+                <span className="product-title product-title-side">Passimal</span>
                 <span className="product-desc">
                   A fun and informative way of understanding how to improve your password.
                 </span>
               </div>
+            </div>
+            <div className="product-col">
+              <img
+                ref={imageRef2}
+                className="wordreach-tile2"
+                src={"/wordreach-screen.svg"}
+                alt="product screen2"
+              />
               <div className="product-text">
                 <span className="product-title">WordReach</span>
                 <span className="product-desc">
                   Step into the exciting world of WordReach - the online word-building challenge!
                 </span>
               </div>
+            </div>
+
+            <div className="product-col">
+              <img
+                ref={imageRef3}
+                className="wordreach-tile3"
+                src={"/wordtree-screen.svg"}
+                alt="product screen3"
+              />
               <div className="product-text">
                 <span className="product-title">WordTree</span>
                 <span className="product-desc">
@@ -138,29 +143,33 @@ export default function Home() {
           </div>
           <div className="profiles-container">
             <h2 className="products-title">MEET THE CREW</h2>
-            <img className="profile-tile" src={"/rob-portrait.png"} alt="product screen1" />
-            <img className="profile-tile" src={"/ben-portrait.jpeg"} alt="product screen2" />
-            <img className="profile-tile" src={"/tony-portrait.png"} alt="product screen3" />
-            <div className="product-text-wrapper">
-              <div className="product-text">
+            <div className="profile-col">
+              <img className="profile-tile" src={"/rob-portrait.png"} alt="product screen1" />
+              <div className="profile-text">
                 <span className="product-title">Rob</span>
-                <span className="product-desc">
-                  &quot;I&#39;m Rob, designer, developer and idea-maker. Catch me sailing at
-                  weekends!&quot;
+                <span className="profile-desc">
+                  &quot;I&#39;m Rob, designer, developer and idea-maker. Catch me gaming and sailing
+                  at weekends! (not at the same time)&quot;
                 </span>
               </div>
-              <div className="product-text">
+            </div>
+            <div className="profile-col">
+              <img className="profile-tile" src={"/ben-portrait.jpeg"} alt="product screen2" />
+              <div className="profile-text">
                 <span className="product-title">Ben</span>
-                <span className="product-desc">
+                <span className="profile-desc">
                   &quot;I&#39;m Ben, I&#39;m responsible for all the bugs you find. You&#39;ll
                   usually find me ignoring messages in a dark room&quot;
                 </span>
               </div>
-              <div className="product-text">
+            </div>
+            <div className="profile-col">
+              <img className="profile-tile" src={"/tony-portrait.png"} alt="product screen3" />
+              <div className="profile-text">
                 <span className="product-title">Tony</span>
-                <span className="product-desc">
-                  &quot;I&#39;m Tony, a product guy from London. Besides product, you&#39;ll also
-                  find me restoring classic cars!&quot;
+                <span className="profile-desc">
+                  &quot;I&#39;m Tony, a product guy from South London. Besides product, you&#39;ll
+                  also find me restoring classic cars!&quot;
                 </span>
               </div>
             </div>
