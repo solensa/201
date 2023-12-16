@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -86,6 +86,16 @@ export default function Home() {
 
   return (
     <>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+      </Script>
       <div className="parallax">
         <div className="parallax1">
           <div className="s201-container">
