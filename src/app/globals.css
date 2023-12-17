@@ -251,4 +251,7 @@ h2 {
   .footer {
     isolation: isolate;
   }
+  .s201-title-201 {
+    margin-right: 3vw;
+  }
 }
