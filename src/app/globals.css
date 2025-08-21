@@ -252,3 +252,137 @@ h2 {
     isolation: isolate;
   }
 }
+
+/* WordReach Landing Page Styles */
+.wordreach-landing {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.wordreach-container {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.wordreach-header {
+  margin-bottom: 40px;
+}
+
+.wordreach-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wordreach-tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.store-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.store-button {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 16px 24px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.store-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.button-store {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.wordreach-footer {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.wordreach-footer p {
+  margin: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .wordreach-title {
+    font-size: 2.8rem;
+  }
+  
+  .wordreach-tagline {
+    font-size: 1.1rem;
+  }
+  
+  .wordreach-landing {
+    padding: 16px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .wordreach-landing {
+    padding: 16px;
+  }
+  
+  .wordreach-header {
+    margin-bottom: 24px;
+  }
+  
+  .store-buttons {
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet and desktop - side by side buttons */
+@media (min-width: 480px) {
+  .store-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .store-button {
+    flex: 1;
+    max-width: 200px;
+  }
+}
