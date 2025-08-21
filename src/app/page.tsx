@@ -123,7 +123,7 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-            <Link href="https://wordreach.io" passHref={true}>
+            <Link href="/wordreach" passHref={true}>
               <div className="product-col">
                 <img
                   ref={imageRef2}

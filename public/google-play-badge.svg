@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="153px" height="45px" viewBox="0 0 153 45" style="enable-background:new 0 0 153 45;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#000000;stroke:#A6A6A6;stroke-width:0.2;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'Roboto-Medium';}
+	.st3{font-size:7px;}
+	.st4{font-family:'Roboto-Regular';}
+	.st5{font-size:11px;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M148,45H5c-2.8,0-5-2.2-5-5V5c0-2.8,2.2-5,5-5h143c2.8,0,5,2.2,5,5v35C153,42.8,150.8,45,148,45z"/>
+		<path class="st1" d="M148,0.8c2.3,0,4.2,1.9,4.2,4.2v35c0,2.3-1.9,4.2-4.2,4.2H5c-2.3,0-4.2-1.9-4.2-4.2V5c0-2.3,1.9-4.2,4.2-4.2 H148 M148,0H5C2.2,0,0,2.2,0,5v35c0,2.8,2.2,5,5,5h143c2.8,0,5-2.2,5-5V5C153,2.2,150.8,0,148,0L148,0z"/>
+	</g>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="21.8" y1="33.29" x2="5.017" y2="16.508">
+			<stop  offset="0" style="stop-color:#00A0FF"/>
+			<stop  offset="0.007" style="stop-color:#00A1FF"/>
+			<stop  offset="0.26" style="stop-color:#00BEFF"/>
+			<stop  offset="0.512" style="stop-color:#00D2FF"/>
+			<stop  offset="0.76" style="stop-color:#00DFFF"/>
+			<stop  offset="1" style="stop-color:#00E3FF"/>
+		</linearGradient>
+		<path style="fill:url(#SVGID_1_);" d="M10.4,7.5c-0.3,0.3-0.4,0.8-0.4,1.4v27.2c0,0.6,0.2,1.1,0.4,1.4l0.1,0.1L23.4,24.5v-0.3 v-0.3L10.5,7.5L10.4,7.5z"/>
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="33.834" y1="20.678" x2="9.637" y2="20.678">
+			<stop  offset="0" style="stop-color:#FFE000"/>
+			<stop  offset="0.409" style="stop-color:#FFBD00"/>
+			<stop  offset="0.775" style="stop-color:#FFA500"/>
+			<stop  offset="1" style="stop-color:#FF9C00"/>
+		</linearGradient>
+		<path style="fill:url(#SVGID_2_);" d="M27.9,28.8l-4.4-4.5v-0.3v-0.3v-0.3l4.4-4.5l0.1,0.1l5.2,3c1.5,0.8,1.5,2.2,0,3l-5.2,3 L27.9,28.8z"/>
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="24.827" y1="22.296" x2="2.069" y2="-0.462">
+			<stop  offset="0" style="stop-color:#FF3A44"/>
+			<stop  offset="1" style="stop-color:#C31162"/>
+		</linearGradient>
+		<path style="fill:url(#SVGID_3_);" d="M28,28.7L23.4,24L10.4,37.1c0.5,0.5,1.2,0.5,2.1,0.1L28,28.7"/>
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="7.297" y1="0.176" x2="17.46" y2="10.339">
+			<stop  offset="0" style="stop-color:#32A071"/>
+			<stop  offset="0.069" style="stop-color:#2DA771"/>
+			<stop  offset="0.476" style="stop-color:#15CF74"/>
+			<stop  offset="0.801" style="stop-color:#06E775"/>
+			<stop  offset="1" style="stop-color:#00F076"/>
+		</linearGradient>
+		<path style="fill:url(#SVGID_4_);" d="M28,19.2L12.5,8.7c-0.9-0.5-1.6-0.4-2.1,0.1L23.4,24L28,19.2z"/>
+		<g>
+			<path class="st1" d="M27.9,28.6L12.5,38.1c-0.8,0.5-1.5,0.4-2,0l0,0l-0.1,0.1l0,0l0.1,0.1l0,0c0.5,0.4,1.2,0.5,2,0L27.9,28.6 L27.9,28.6z"/>
+			<path class="st1" d="M10.4,37.5C10,37.1,9.9,36.6,9.9,36v0.1c0,0.6,0.2,1.1,0.4,1.4L10.4,37.5L10.4,37.5z"/>
+		</g>
+		<path class="st1" d="M33.2,25.6L28,28.6l0.1,0.1l5.2-3c0.6-0.4,1-0.9,1-1.5C34.1,24.7,33.7,25.2,33.2,25.6z"/>
+		<path class="st1" d="M12.5,8.9L33.2,19.4c0.5,0.3,0.9,0.8,1,1.3c0-0.6-0.3-1.1-1-1.5L12.5,8.7C11,7.9,10,8.5,10,10.1v0.1 C10,8.5,11,7.9,12.5,8.9z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 50.0981 15.0396)" class="st1 st2 st3">GET IT ON</text>
+		<text transform="matrix(1 0 0 1 50.2974 28.0247)" class="st1 st4 st5">Google Play</text>
+	</g>
+</g>
+</svg>
