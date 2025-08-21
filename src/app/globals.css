@@ -47,6 +47,15 @@ h2 {
   width: 100%;
   isolation: isolate;
 }
+
+.studio-tagline {
+  font-size: 3vw;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 300;
+  opacity: 0.9;
+}
 .s201-container {
   margin-top: 50px;
   padding: 30px;
@@ -182,6 +191,46 @@ h2 {
   margin: 0 15px;
 }
 
+.download-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.app-badge {
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.app-badge:hover {
+  transform: scale(1.05);
+}
+
+.hero-cta {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  isolation: isolate;
+}
+
+.hero-title {
+  font-size: 4vw;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-description {
+  font-size: 2vw;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
   .s201-container {
     height: 100vh;
@@ -218,11 +267,19 @@ h2 {
     font-weight: 700;
   }
   .product-desc {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     width: 80vw;
     font-size: 4vw;
     line-height: 6.5vw;
     letter-spacing: 0.1vw;
+  }
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .app-badge {
+    height: 35px;
   }
   .profile-text {
     text-align: left;
@@ -253,5 +310,16 @@ h2 {
   }
   .s201-title-201 {
     margin-right: 3vw;
+  }
+  .studio-tagline {
+    font-size: 5vw;
+    margin-top: 15px;
+  }
+  .hero-title {
+    font-size: 8vw;
+  }
+  .hero-description {
+    font-size: 4.5vw;
+    padding: 0 15px;
   }
 }

@@ -5,8 +5,8 @@ import "./globals.css";
 // const open_Sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "201 Studio",
-  description: "Let your mind loose.",
+  title: "201 Studio - Creating Apps That Spark Joy",
+  description: "Download our award-winning mobile apps: WordReach, Passimal, and WordTree. Join millions of users worldwide!",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

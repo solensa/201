@@ -101,60 +101,85 @@ export default function Home() {
           <div className="s201-container">
             <h1 className="s201-title s201-title-201 ">2OI</h1>
             <h1 className="s201-title">STUDIO</h1>
+            <h2 className="studio-tagline">Creating Apps That Spark Joy</h2>
             <video ref={videoRef} className="section-img" src="/5.mp4" autoPlay loop muted />
           </div>
 
           <img className="mountain-img" src={"/mountainsbg.png"} alt="colomountains background" />
+          
+          <div className="hero-cta">
+            <h2 className="hero-title">Ready to Play?</h2>
+            <p className="hero-description">Download our award-winning apps and join millions of users worldwide!</p>
+          </div>
+          
           <div className="products-container">
-            <h2 className="products-title">LET YOUR MIND LOOSE</h2>
-            <Link href="https://passimal.201.studio" passHref={true}>
-              <div className="product-col">
-                <img
-                  ref={imageRef}
-                  className="wordreach-tile"
-                  src={"/passimal-screen.svg"}
-                  alt="product screen1"
-                />
-                <div className="product-text">
-                  <span className="product-title product-title-side">Passimal</span>
-                  <span className="product-desc">
-                    A fun and informative way of understanding how to improve your password.
-                  </span>
+            <h2 className="products-title">🎮 DISCOVER OUR APPS</h2>
+            <div className="product-col">
+              <img
+                ref={imageRef}
+                className="wordreach-tile"
+                src={"/passimal-screen.svg"}
+                alt="Passimal app screenshot"
+              />
+              <div className="product-text">
+                <span className="product-title product-title-side">Passimal</span>
+                <span className="product-desc">
+                  Transform your password security with our fun, interactive tool. Learn to create unbreakable passwords while having fun!
+                </span>
+                <div className="download-buttons">
+                  <Link href="https://passimal.201.studio" passHref={true}>
+                    <img className="app-badge" src="/app-store-badge.svg" alt="Download on App Store" />
+                  </Link>
+                  <Link href="https://passimal.201.studio" passHref={true}>
+                    <img className="app-badge" src="/google-play-badge.svg" alt="Get it on Google Play" />
+                  </Link>
                 </div>
               </div>
-            </Link>
-            <Link href="https://wordreach.io" passHref={true}>
-              <div className="product-col">
-                <img
-                  ref={imageRef2}
-                  className="wordreach-tile2"
-                  src={"/wordreach-screen.svg"}
-                  alt="product screen2"
-                />
-                <div className="product-text">
-                  <span className="product-title">WordReach</span>
-                  <span className="product-desc">
-                    Step into the exciting world of WordReach - the online word-building challenge!
-                  </span>
+            </div>
+            <div className="product-col">
+              <img
+                ref={imageRef2}
+                className="wordreach-tile2"
+                src={"/wordreach-screen.svg"}
+                alt="WordReach app screenshot"
+              />
+              <div className="product-text">
+                <span className="product-title">WordReach</span>
+                <span className="product-desc">
+                  Challenge your vocabulary in this addictive word-building adventure! Compete with friends and climb the leaderboards.
+                </span>
+                <div className="download-buttons">
+                  <Link href="https://wordreach.io" passHref={true}>
+                    <img className="app-badge" src="/app-store-badge.svg" alt="Download on App Store" />
+                  </Link>
+                  <Link href="https://wordreach.io" passHref={true}>
+                    <img className="app-badge" src="/google-play-badge.svg" alt="Get it on Google Play" />
+                  </Link>
                 </div>
               </div>
-            </Link>
-            <Link href="https://wordtree.info/" passHref={true}>
-              <div className="product-col">
-                <img
-                  ref={imageRef3}
-                  className="wordreach-tile3"
-                  src={"/wordtree-screen.svg"}
-                  alt="product screen3"
-                />
-                <div className="product-text">
-                  <span className="product-title">WordTree</span>
-                  <span className="product-desc">
-                    A quick reference to the different types of English word.
-                  </span>
+            </div>
+            <div className="product-col">
+              <img
+                ref={imageRef3}
+                className="wordreach-tile3"
+                src={"/wordtree-screen.svg"}
+                alt="WordTree app screenshot"
+              />
+              <div className="product-text">
+                <span className="product-title">WordTree</span>
+                <span className="product-desc">
+                  Master English grammar with our comprehensive reference tool. Perfect for students, writers, and language enthusiasts!
+                </span>
+                <div className="download-buttons">
+                  <Link href="https://wordtree.info/" passHref={true}>
+                    <img className="app-badge" src="/app-store-badge.svg" alt="Download on App Store" />
+                  </Link>
+                  <Link href="https://wordtree.info/" passHref={true}>
+                    <img className="app-badge" src="/google-play-badge.svg" alt="Get it on Google Play" />
+                  </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
           <div className="profiles-container">
             <h2 className="products-title">MEET THE CREW</h2>
