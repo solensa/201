@@ -386,3 +386,127 @@ h2 {
     max-width: 200px;
   }
 }
+
+/* Enhanced app-focused styles */
+.download-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.app-store-badge,
+.google-play-badge {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+}
+
+.app-store-badge {
+  background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+  border-color: rgba(0, 122, 255, 0.3);
+}
+
+.google-play-badge {
+  background: linear-gradient(135deg, #34A853 0%, #137333 100%);
+  border-color: rgba(52, 168, 83, 0.3);
+}
+
+.app-store-badge:hover,
+.google-play-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(103, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  margin: 40px 0;
+  border-radius: 20px;
+  isolation: isolate;
+}
+
+.cta-title {
+  font-size: 4vw;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cta-description {
+  font-size: 2.2vw;
+  color: var(--text-color);
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Studio tagline */
+.studio-tagline {
+  text-align: center;
+  font-size: 2.5vw;
+  color: var(--text-color);
+  margin: 20px 0 0 0;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+  .download-buttons {
+    gap: 16px;
+  }
+  
+  .app-store-badge,
+  .google-play-badge {
+    padding: 14px 24px;
+    font-size: 1rem;
+    min-width: 220px;
+  }
+  
+  .cta-title {
+    font-size: 6vw;
+  }
+  
+  .cta-description {
+    font-size: 4vw;
+  }
+  
+  .studio-tagline {
+    font-size: 4vw;
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 769px) {
+  .download-buttons {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .cta-title {
+    font-size: 2.5rem;
+  }
+  
+  .cta-description {
+    font-size: 1.2rem;
+  }
+  
+  .studio-tagline {
+    font-size: 1.1rem;
+  }
+}

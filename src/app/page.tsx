@@ -101,60 +101,98 @@ export default function Home() {
           <div className="s201-container">
             <h1 className="s201-title s201-title-201 ">2OI</h1>
             <h1 className="s201-title">STUDIO</h1>
+            <p className="studio-tagline">Creating Apps That Spark Joy</p>
             <video ref={videoRef} className="section-img" src="/5.mp4" autoPlay loop muted />
           </div>
 
           <img className="mountain-img" src={"/mountainsbg.png"} alt="colomountains background" />
           <div className="products-container">
-            <h2 className="products-title">LET YOUR MIND LOOSE</h2>
-            <Link href="https://passimal.201.studio" passHref={true}>
-              <div className="product-col">
-                <img
-                  ref={imageRef}
-                  className="wordreach-tile"
-                  src={"/passimal-screen.svg"}
-                  alt="product screen1"
-                />
-                <div className="product-text">
-                  <span className="product-title product-title-side">Passimal</span>
-                  <span className="product-desc">
-                    A fun and informative way of understanding how to improve your password.
-                  </span>
+            <h2 className="products-title">🎮 DISCOVER OUR APPS</h2>
+            <div className="product-col">
+              <img
+                ref={imageRef}
+                className="wordreach-tile"
+                src={"/passimal-screen.svg"}
+                alt="Passimal app screenshot"
+              />
+              <div className="product-text">
+                <span className="product-title product-title-side">Passimal</span>
+                <span className="product-desc">
+                  Transform your password security with our fun, interactive tool. Learn to create unbreakable passwords while having fun!
+                </span>
+                <div className="download-buttons">
+                  <Link href="https://apps.apple.com/app/passimal/id6498829634" target="_blank">
+                    <div className="app-store-badge">
+                      <span>📱 Download on App Store</span>
+                    </div>
+                  </Link>
+                  <Link href="https://play.google.com/store/apps/details?id=com.studio201.passimal" target="_blank">
+                    <div className="google-play-badge">
+                      <span>📲 Get it on Google Play</span>
+                    </div>
+                  </Link>
                 </div>
               </div>
-            </Link>
-            <Link href="https://wordreach.io" passHref={true}>
-              <div className="product-col">
-                <img
-                  ref={imageRef2}
-                  className="wordreach-tile2"
-                  src={"/wordreach-screen.svg"}
-                  alt="product screen2"
-                />
-                <div className="product-text">
-                  <span className="product-title">WordReach</span>
-                  <span className="product-desc">
-                    Step into the exciting world of WordReach - the online word-building challenge!
-                  </span>
+            </div>
+            <div className="product-col">
+              <img
+                ref={imageRef2}
+                className="wordreach-tile2"
+                src={"/wordreach-screen.svg"}
+                alt="WordReach app screenshot"
+              />
+              <div className="product-text">
+                <span className="product-title">WordReach</span>
+                <span className="product-desc">
+                  Challenge your vocabulary in this addictive word-building adventure! Compete with friends and climb the leaderboards.
+                </span>
+                <div className="download-buttons">
+                  <Link href="https://apps.apple.com/gb/app/wordreach/id6749278685" target="_blank">
+                    <div className="app-store-badge">
+                      <span>📱 Download on App Store</span>
+                    </div>
+                  </Link>
+                  <Link href="https://play.google.com/store/apps/details?id=com.studio201.wordreach" target="_blank">
+                    <div className="google-play-badge">
+                      <span>📲 Get it on Google Play</span>
+                    </div>
+                  </Link>
                 </div>
               </div>
-            </Link>
-            <Link href="https://wordtree.info/" passHref={true}>
-              <div className="product-col">
-                <img
-                  ref={imageRef3}
-                  className="wordreach-tile3"
-                  src={"/wordtree-screen.svg"}
-                  alt="product screen3"
-                />
-                <div className="product-text">
-                  <span className="product-title">WordTree</span>
-                  <span className="product-desc">
-                    A quick reference to the different types of English word.
-                  </span>
+            </div>
+            <div className="product-col">
+              <img
+                ref={imageRef3}
+                className="wordreach-tile3"
+                src={"/wordtree-screen.svg"}
+                alt="WordTree app screenshot"
+              />
+              <div className="product-text">
+                <span className="product-title">WordTree</span>
+                <span className="product-desc">
+                  Master English grammar with our comprehensive reference tool. Perfect for students, writers, and language enthusiasts!
+                </span>
+                <div className="download-buttons">
+                  <Link href="https://apps.apple.com/app/wordtree/id6499008006" target="_blank">
+                    <div className="app-store-badge">
+                      <span>📱 Download on App Store</span>
+                    </div>
+                  </Link>
+                  <Link href="https://play.google.com/store/apps/details?id=com.studio201.wordtree" target="_blank">
+                    <div className="google-play-badge">
+                      <span>📲 Get it on Google Play</span>
+                    </div>
+                  </Link>
                 </div>
               </div>
-            </Link>
+            </div>
+          </div>
+          
+          <div className="cta-section">
+            <h2 className="cta-title">Ready to Play? 🚀</h2>
+            <p className="cta-description">
+              Download our award-winning apps and join millions of users worldwide!
+            </p>
           </div>
           <div className="profiles-container">
             <h2 className="products-title">MEET THE CREW</h2>
