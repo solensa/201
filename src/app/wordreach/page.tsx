@@ -29,69 +29,97 @@ export default function WordReachLanding() {
   }, [isLocal]);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500 flex items-center justify-center text-white px-4 py-8">
-      <div className="w-full max-w-3xl text-center">
-        <div className="mx-auto mb-6 flex justify-center">
-          <Image
-            src="/wordreach-screen.svg"
-            alt="WordReach gameplay preview"
-            width={280}
-            height={280}
-            priority
-            className="rounded-2xl shadow-2xl ring-1 ring-black/10"
-          />
-        </div>
+    <main className="relative min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 ">
+        <Image
+          src="/wr-background.png"
+          alt="WordReach background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-80"
+        />
+      </div>
 
-        <h1 className="text-5xl font-extrabold drop-shadow-sm tracking-tight">WordReach</h1>
-        <p className="mt-3 text-lg/7 opacity-90 max-w-2xl mx-auto">
-          Build bridges with words on an 8×8 grid. Take on the Daily Challenge, climb the global
-          leaderboard, and discover satisfyingly clever paths.
-        </p>
-
-        <ul className="mt-6 grid gap-2 text-base/7 max-w-md mx-auto text-white/95">
-          <li>• Fresh Daily Challenge</li>
-          <li>• Simple to learn, hard to master</li>
-          <li>• Clean, relaxing design and subtle sound</li>
-          <li>• Global leaderboards and shareable scores</li>
-        </ul>
-
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={IOS_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="store-button inline-flex items-center justify-center rounded-xl border border-white/30 bg-black/70 backdrop-blur px-6 py-4 transition hover:-translate-y-0.5 hover:bg-black/80 hover:border-white/50 w-full sm:w-56"
-          >
-            <div className="flex flex-col">
-              <span className="text-sm opacity-80">Download on the</span>
-              <span className="text-xl font-semibold">App Store</span>
-            </div>
-          </a>
-          <a
-            href={ANDROID_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="store-button inline-flex items-center justify-center rounded-xl border border-white/30 bg-black/70 backdrop-blur px-6 py-4 transition hover:-translate-y-0.5 hover:bg-black/80 hover:border-white/50 w-full sm:w-56"
-          >
-            <div className="flex flex-col">
-              <span className="text-sm opacity-80">Get it on</span>
-              <span className="text-xl font-semibold">Google Play</span>
-            </div>
-          </a>
-        </div>
-
-        <p className="mt-3 text-white/80 text-sm">
-          On mobile you may be redirected to your app store automatically.
-        </p>
-
-        <footer className="mt-6 opacity-80 text-sm">
-          <p>
-            A 201 Studio game •{" "}
-            <Link href="/legal" className="underline underline-offset-4">
-              Privacy & Terms
-            </Link>
+      <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-6">
+        {/* White rounded card with title, copy and store badges */}
+        <section className="mx-auto mt-6 sm:mt-10 rounded-3xl bg-white/90 text-black backdrop-blur shadow-2xl ring-1 ring-black/10 p-6 sm:p-8 max-w-3xl">
+          <div className="flex justify-center">
+            <Image src="/wr-title.svg" alt="WordReach" width={420} height={140} priority />
+          </div>
+          <p className="mt-3 sm:mt-4 text-center text-lg sm:text-xl leading-relaxed text-black/80">
+            Step into the exciting world of WordReach – the online word‑building challenge!
           </p>
-        </footer>
+
+          <div className="mt-5 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 place-items-center">
+            <a
+              href={IOS_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[220px] sm:w-[240px]"
+            >
+              <Image
+                src="/apple-store.svg"
+                alt="Download on the App Store"
+                width={240}
+                height={72}
+                className="w-full h-auto"
+              />
+            </a>
+            <a
+              href={ANDROID_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[220px] sm:w-[240px]"
+            >
+              <Image
+                src="/google-store.svg"
+                alt="Get it on Google Play"
+                width={240}
+                height={72}
+                className="w-full h-auto"
+              />
+            </a>
+          </div>
+        </section>
+
+        {/* Device previews */}
+        <section className="relative h-[500px] sm:h-[600px]">
+          <div className="absolute left-1/2 -translate-x-[55%] sm:-translate-x-[55%] lg:-translate-x-[55%] rotate-[-12deg] w-[350px] sm:w-[450px] lg:w-[550px] mt-[-0px] z-10">
+            <Image
+              src="/wr-preview1.png"
+              alt="WordReach preview"
+              width={680}
+              height={1720}
+              className="w-full h-auto max-w-none drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]"
+            />
+          </div>
+          <div className="absolute left-1/2 -translate-x-[30%] sm:-translate-x-[30%] lg:-translate-x-[30%] rotate-[12deg] w-[300px] lg:w-[450px] mt-[-15px]">
+            <Image
+              src="/wr-preview2.png"
+              alt="WordReach preview"
+              width={340}
+              height={660}
+              className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]"
+            />
+          </div>
+        </section>
+
+        {/* Footer logo and legal */}
+        <div className="mt-12 sm:mt-16 mb-10 flex flex-col items-center gap-3">
+          <Image
+            src="/201-logo.svg"
+            alt="201 Studio"
+            width={160}
+            height={44}
+            className="opacity-90"
+          />
+          <p className="text-white/70 text-sm">A 201 Studio game </p>
+          <p className="text-white/50 text-xs">
+            On mobile you may be redirected to your app store automatically.
+          </p>
+        </div>
       </div>
     </main>
   );
