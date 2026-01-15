@@ -29,53 +29,92 @@ export default function SnakShotLanding() {
   }, [isLocal]);
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden" style={{ backgroundColor: "#101e22" }}>
-      <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-between px-5 py-10 sm:px-6 sm:py-16">
+    <main className="relative min-h-screen overflow-hidden" style={{ backgroundColor: "#101e22" }}>
+      {/* Background Pattern */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-10">
+        {[...Array(60)].map((_, i) => {
+          const randomRepeats = [2, 3, 4, 3, 2, 4, 2, 3, 3][i % 9];
+          const wordHeight = 350; // Approximate height of one "SnakShot" word
+          const randomHeight = randomRepeats * wordHeight;
+          const randomTopOffset = [-100, -50, 0, -75, -25, -120, -40, -90, -60][i % 9];
+          return (
+            <div
+              key={i}
+              className="absolute"
+              style={{
+                left: `${i * 50}px`,
+                top: `${randomTopOffset}px`,
+                height: `${randomHeight}px`,
+                overflow: "hidden",
+              }}
+            >
+              <p
+                className="whitespace-nowrap text-[60px] font-bold italic leading-none text-white"
+                style={{
+                  fontFamily: "Kanit, sans-serif",
+                  writingMode: "vertical-rl",
+                  transform: "rotate(180deg)",
+                }}
+              >
+                {Array(randomRepeats).fill("SnakShot").join(" ")}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Content */}
+      <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-5 py-8">
         {/* Hero Card */}
         <section
-          className="relative mx-auto w-full max-w-2xl rounded-[2.5rem] p-8 sm:p-12"
+          className="relative mx-auto mt-8 w-full max-w-[634px] rounded-[50px] border-[16px] border-solid md:aspect-square md:mt-12"
           style={{
-            background: "linear-gradient(135deg, rgba(33, 222, 107, 0.15) 0%, rgba(33, 222, 107, 0.05) 100%)",
-            boxShadow: "0 0 0 3px rgba(33, 222, 107, 0.4), 0 20px 60px rgba(0, 0, 0, 0.4)",
+            borderColor: "#21de6b",
+            background:
+              "radial-gradient(circle at center, rgba(23, 52, 61, 1) 0%, rgba(16, 30, 34, 1) 100%)",
           }}
         >
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center justify-center p-6 text-center md:absolute md:inset-0 md:p-12">
             {/* Title */}
             <h1
-              className="mb-2 text-5xl font-bold italic sm:text-6xl md:text-7xl"
-              style={{ fontFamily: "Kanit, sans-serif", color: "#ffffff" }}
+              className="m-0 mb-2 text-4xl font-bold italic sm:text-5xl md:text-6xl lg:text-7xl"
+              style={{ fontFamily: "Kanit, sans-serif", color: "#ffffff", marginTop: 0 }}
             >
               SnakShot
             </h1>
-            <p className="mb-8 text-lg text-white/80 sm:text-xl">Your visual food tracker</p>
+            <p className="mb-4 text-base text-white/90 sm:mb-6 sm:text-lg md:text-xl">
+              Your visual food tracker
+            </p>
 
             {/* Logo */}
-            <div className="mb-8">
+            <div className="mb-4 sm:mb-6">
               <Image
                 src="/snakshot-logo.svg"
                 alt="SnakShot Logo"
-                width={180}
-                height={180}
-                className="h-auto w-[140px] sm:w-[180px]"
+                width={338}
+                height={338}
+                className="h-auto w-[140px] sm:w-[161px] md:w-[207px]"
               />
             </div>
 
             {/* Tagline */}
-            <p className="mb-8 text-lg text-white sm:text-xl">Track your meals effortlessly</p>
+            <p className="mb-4 text-lg text-white sm:mb-6 sm:text-xl md:text-2xl">
+              Track your meals effortlessly
+            </p>
 
             {/* Store Badges */}
-            <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
               <a
                 href={IOS_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[160px] transition-transform hover:scale-105 sm:w-[180px]"
+                className="w-[145px] transition-transform hover:scale-105 sm:w-[161px] md:w-[184px]"
               >
                 <Image
                   src="/apple-store-dark.svg"
                   alt="Download on the App Store"
-                  width={180}
-                  height={54}
+                  width={200}
+                  height={60}
                   className="h-auto w-full"
                 />
               </a>
@@ -83,13 +122,13 @@ export default function SnakShotLanding() {
                 href={ANDROID_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[160px] transition-transform hover:scale-105 sm:w-[180px]"
+                className="w-[145px] transition-transform hover:scale-105 sm:w-[161px] md:w-[184px]"
               >
                 <Image
                   src="/google-play-dark.svg"
                   alt="Get it on Google Play"
-                  width={180}
-                  height={54}
+                  width={200}
+                  height={60}
                   className="h-auto w-full"
                 />
               </a>
@@ -98,20 +137,12 @@ export default function SnakShotLanding() {
         </section>
 
         {/* Phone Mockups */}
-        <div className="relative mt-12 flex w-full max-w-4xl items-center justify-center gap-4 sm:mt-16 sm:gap-8">
-          {/* Left Phone */}
-          <div className="relative z-10 w-[45%] max-w-[280px] sm:max-w-[320px]" style={{ transform: "rotate(-12deg)" }}>
-            <Image
-              src="/snakshot-phone1.png"
-              alt="SnakShot App Screen 1"
-              width={640}
-              height={1280}
-              className="h-auto w-full drop-shadow-2xl"
-            />
-          </div>
-
-          {/* Right Phone */}
-          <div className="relative z-0 w-[45%] max-w-[280px] sm:max-w-[320px]" style={{ transform: "rotate(12deg)" }}>
+        <div className="relative mt-12 flex w-full max-w-5xl items-center justify-center md:mt-20">
+          {/* Left Phone (Teal) - in front */}
+          <div
+            className="relative z-20 w-[55%] max-w-[470px] md:w-[60%]"
+            style={{ transform: "rotate(-15deg) translateX(40px) scale(0.85)", transformOrigin: "center" }}
+          >
             <Image
               src="/snakshot-phone2.png"
               alt="SnakShot App Screen 2"
@@ -120,14 +151,34 @@ export default function SnakShotLanding() {
               className="h-auto w-full drop-shadow-2xl"
             />
           </div>
+
+          {/* Right Phone (Purple) - behind */}
+          <div
+            className="relative z-10 w-[38%] max-w-[330px] md:w-[42%]"
+            style={{ transform: "rotate(20deg) translateX(-120px) scale(0.85)", transformOrigin: "center" }}
+          >
+            <Image
+              src="/snakshot-phone1.png"
+              alt="SnakShot App Screen 1"
+              width={640}
+              height={1280}
+              className="h-auto w-full drop-shadow-2xl"
+            />
+          </div>
         </div>
 
         {/* Footer */}
-        <footer className="mt-12 flex flex-col items-center gap-4 sm:mt-16">
+        <footer className="mt-20 flex flex-col items-center gap-6">
           <Link href="/">
-            <Image src="/201-logo.svg" alt="201 Studio" width={140} height={38} className="opacity-90" />
+            <Image
+              src="/201-logo.svg"
+              alt="201 Studio"
+              width={200}
+              height={55}
+              className="opacity-80"
+            />
           </Link>
-          <div className="flex items-center gap-3 text-sm text-white/60">
+          <div className="flex items-center gap-4 text-sm text-white/60">
             <Link href="/snakshot/privacy" className="hover:text-white/90">
               Privacy Policy
             </Link>
