@@ -312,10 +312,11 @@ export default function SnakShotPrivacyPolicy() {
 
         {/* Footer Navigation */}
         <footer className="mt-12 sm:mt-16 pt-8 border-t border-white/10">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 justify-center">
             <Link href="/snakshot" className="text-sm text-white/50 hover:text-white transition-colors">
-              Back to SnakShot
+              ← Back to SnakShot
             </Link>
+            <span className="hidden sm:inline text-white/40">•</span>
             <Link href="/support" className="text-sm text-white/50 hover:text-white transition-colors">
               Contact Support
             </Link>
