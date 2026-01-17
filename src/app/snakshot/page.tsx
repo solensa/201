@@ -128,14 +128,18 @@ export default function SnakShotLanding() {
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-5 py-8">
         {/* Hero Card */}
         <section
-          className="relative mx-auto mt-8 w-full max-w-[634px] rounded-[50px] border-[8px] border-solid md:aspect-square md:mt-12"
+          className="relative mx-auto mt-8 w-full max-w-[634px] rounded-[50px] p-[8px] md:aspect-square md:mt-12"
           style={{
-            borderColor: "#21de6b",
-            background:
-              "radial-gradient(circle at center, rgba(23, 52, 61, 1) 0%, rgba(16, 30, 34, 1) 100%)",
+            background: "linear-gradient(180deg, #21de6b 0%, #1fb75f 25%, #1d9453 50%, #1a7a49 75%, #176140 100%)",
           }}
         >
-          <div className="flex flex-col items-center justify-center p-6 text-center md:absolute md:inset-0 md:p-12">
+          <div
+            className="flex h-full w-full flex-col items-center justify-center rounded-[42px] p-6 text-center md:p-12"
+            style={{
+              background:
+                "radial-gradient(circle at center, rgba(23, 52, 61, 1) 0%, rgba(16, 30, 34, 1) 100%)",
+            }}
+          >
             {/* Title */}
             <h1
               className="m-0 mb-2 text-4xl font-bold italic sm:text-5xl md:text-6xl lg:text-7xl"
