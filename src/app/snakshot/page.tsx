@@ -30,13 +30,74 @@ export default function SnakShotLanding() {
 
   return (
     <main className="relative min-h-screen overflow-hidden" style={{ backgroundColor: "#101e22" }}>
-      {/* Background Pattern */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-10">
-        {[...Array(60)].map((_, i) => {
-          const randomRepeats = [2, 3, 4, 3, 2, 4, 2, 3, 3][i % 9];
+      {/* Background Pattern - Mobile */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-10 md:hidden">
+        {[...Array(100)].map((_, i) => {
+          const randomRepeats = [2, 3, 4, 5, 3, 6, 4, 2, 5, 3, 4, 6][i % 12];
           const wordHeight = 350; // Approximate height of one "SnakShot" word
           const randomHeight = randomRepeats * wordHeight;
-          const randomTopOffset = [-100, -50, 0, -75, -25, -120, -40, -90, -60][i % 9];
+          const randomTopOffset = [-100, -50, 0, -75, -25, -120, -40, -90, -60, -30, -110, -80][i % 12];
+          return (
+            <div
+              key={i}
+              className="absolute"
+              style={{
+                left: `${i * 35}px`,
+                top: `${randomTopOffset}px`,
+                height: `${randomHeight}px`,
+                overflow: "hidden",
+              }}
+            >
+              <p
+                className="whitespace-nowrap text-[40px] font-bold italic leading-none text-white"
+                style={{
+                  fontFamily: "Kanit, sans-serif",
+                  writingMode: "vertical-rl",
+                  transform: "rotate(180deg)",
+                }}
+              >
+                {Array(randomRepeats).fill("SnakShot").join(" ")}
+              </p>
+            </div>
+          );
+        })}
+        {/* Additional background text - Left side of phone area */}
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => {
+          const repeats = [7, 8, 9, 8, 10, 9, 7, 8, 9][i];
+          return (
+            <div
+              key={`left-phone-${i}`}
+              className="absolute"
+              style={{
+                left: `${i * 40}px`,
+                top: "1000px",
+                height: "3000px",
+                overflow: "hidden",
+                opacity: "0.2",
+              }}
+            >
+              <p
+                className="whitespace-nowrap text-[40px] font-bold italic leading-none text-white"
+                style={{
+                  fontFamily: "Kanit, sans-serif",
+                  writingMode: "vertical-rl",
+                  transform: "rotate(180deg)",
+                }}
+              >
+                {Array(repeats).fill("SnakShot").join(" ")}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Background Pattern - Desktop */}
+      <div className="pointer-events-none absolute inset-0 hidden overflow-hidden opacity-10 md:block">
+        {[...Array(100)].map((_, i) => {
+          const randomRepeats = [2, 3, 4, 5, 3, 6, 4, 2, 5, 3, 4, 6][i % 12];
+          const wordHeight = 350; // Approximate height of one "SnakShot" word
+          const randomHeight = randomRepeats * wordHeight;
+          const randomTopOffset = [-100, -50, 0, -75, -25, -120, -40, -90, -60, -30, -110, -80][i % 12];
           return (
             <div
               key={i}
@@ -67,7 +128,7 @@ export default function SnakShotLanding() {
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-5 py-8">
         {/* Hero Card */}
         <section
-          className="relative mx-auto mt-8 w-full max-w-[634px] rounded-[50px] border-[16px] border-solid md:aspect-square md:mt-12"
+          className="relative mx-auto mt-8 w-full max-w-[634px] rounded-[50px] border-[8px] border-solid md:aspect-square md:mt-12"
           style={{
             borderColor: "#21de6b",
             background:
@@ -136,12 +197,12 @@ export default function SnakShotLanding() {
           </div>
         </section>
 
-        {/* Phone Mockups */}
-        <div className="relative mt-12 flex w-full max-w-5xl items-center justify-center md:mt-20">
+        {/* Phone Mockups - Mobile */}
+        <div className="relative mt-12 flex w-full max-w-5xl items-center justify-center md:hidden">
           {/* Left Phone (Teal) - in front */}
           <div
-            className="relative z-20 w-[55%] max-w-[470px] md:w-[60%]"
-            style={{ transform: "rotate(-15deg) translateX(40px) scale(0.85)", transformOrigin: "center" }}
+            className="relative z-20 w-[55%] max-w-[470px]"
+            style={{ transform: "rotate(-15deg) translateX(25px) scale(1.30)", transformOrigin: "center" }}
           >
             <Image
               src="/snakshot-phone2.png"
@@ -154,8 +215,39 @@ export default function SnakShotLanding() {
 
           {/* Right Phone (Purple) - behind */}
           <div
-            className="relative z-10 w-[38%] max-w-[330px] md:w-[42%]"
-            style={{ transform: "rotate(20deg) translateX(-120px) scale(0.85)", transformOrigin: "center" }}
+            className="relative z-10 w-[38%] max-w-[330px]"
+            style={{ transform: "rotate(20deg) translateX(-50px) scale(1.30)", transformOrigin: "center" }}
+          >
+            <Image
+              src="/snakshot-phone1.png"
+              alt="SnakShot App Screen 1"
+              width={640}
+              height={1280}
+              className="h-auto w-full drop-shadow-2xl"
+            />
+          </div>
+        </div>
+
+        {/* Phone Mockups - Desktop */}
+        <div className="relative mt-20 hidden w-full max-w-5xl items-center justify-center md:flex">
+          {/* Left Phone (Teal) - in front */}
+          <div
+            className="relative z-20 w-[60%] max-w-[470px]"
+            style={{ transform: "rotate(-15deg) translateX(80px) scale(1.0)", transformOrigin: "center" }}
+          >
+            <Image
+              src="/snakshot-phone2.png"
+              alt="SnakShot App Screen 2"
+              width={640}
+              height={1280}
+              className="h-auto w-full drop-shadow-2xl"
+            />
+          </div>
+
+          {/* Right Phone (Purple) - behind */}
+          <div
+            className="relative z-10 w-[42%] max-w-[330px]"
+            style={{ transform: "rotate(20deg) translateX(-160px) scale(1.0)", transformOrigin: "center" }}
           >
             <Image
               src="/snakshot-phone1.png"
