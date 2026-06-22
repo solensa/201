@@ -15,73 +15,46 @@ export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const imageRef2 = useRef<HTMLImageElement | null>(null);
   const imageRef3 = useRef<HTMLImageElement | null>(null);
+  const imageRef4 = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      requestAnimationFrame(() => {
-        if (imageRef.current) {
-          const windowHeight = imageRef.current.offsetTop - 0.55 * window.innerHeight;
-          if (window.scrollY > windowHeight) {
-            const rotation = (window.scrollY - windowHeight) / 2 - 90;
-            if (rotation > 0) {
-              imageRef.current.style.transform = `perspective(200px) rotateX(${0}deg)`;
-              imageRef.current.style.opacity = `${1}`;
-            } else {
-              imageRef.current.style.transform = `perspective(200px) rotateX(${-rotation}deg) scale(${
-                1 + rotation / 90
-              })`;
-              imageRef.current.style.opacity = `${1 + rotation / 90}`;
-            }
-          } else {
-            imageRef.current.style.transform = `perspective(200px) rotateX(${-90}deg) `;
-            imageRef.current.style.opacity = `${0}`;
-          }
-        }
-        if (imageRef2.current) {
-          const windowHeight = imageRef2.current.offsetTop - 0.55 * window.innerHeight;
-          if (window.scrollY > windowHeight) {
-            const rotation = (window.scrollY - windowHeight) / 2 - 90;
-            if (rotation > 0) {
-              imageRef2.current.style.transform = `perspective(200px) rotateX(${0}deg)`;
-              imageRef2.current.style.opacity = `${1}`;
-            } else {
-              imageRef2.current.style.transform = `perspective(200px) rotateX(${-rotation}deg) scale(${
-                1 + rotation / 90
-              })`;
-              imageRef2.current.style.opacity = `${1 + rotation / 90}`;
-            }
-          } else {
-            imageRef2.current.style.transform = `perspective(200px) rotateX(${-90}deg) `;
-            imageRef2.current.style.opacity = `${0}`;
-          }
-        }
-        if (imageRef3.current) {
-          const windowHeight = imageRef3.current.offsetTop - 0.55 * window.innerHeight;
-          if (window.scrollY > windowHeight) {
-            const rotation = (window.scrollY - windowHeight) / 2 - 90;
-            if (rotation > 0) {
-              imageRef3.current.style.transform = `perspective(200px) rotateX(${0}deg)`;
-              imageRef3.current.style.opacity = `${1}`;
-            } else {
-              imageRef3.current.style.transform = `perspective(200px) rotateX(${-rotation}deg) scale(${
-                1 + rotation / 90
-              })`;
-              imageRef3.current.style.opacity = `${1 + rotation / 90}`;
-            }
-          } else {
-            imageRef3.current.style.transform = `perspective(200px) rotateX(${-90}deg) `;
-            imageRef3.current.style.opacity = `${0}`;
-          }
+    const refs = [imageRef, imageRef2, imageRef3, imageRef4];
+    // Current (eased) rotation per tile. Each frame we ease this toward the
+    // scroll-derived target rather than snapping to it, so a fast scroll glides
+    // the tile in over a few frames instead of banging in.
+    const current = refs.map(() => -90);
+    // How quickly the tile catches up to the scroll target (0–1). Lower = smoother
+    // on fast scrolls but more lag on slow scrolls.
+    const EASE = 0.11;
+    let raf = 0;
+
+    const tick = () => {
+      refs.forEach((ref, i) => {
+        const el = ref.current;
+        if (!el) return;
+        const trigger = el.offsetTop - 0.55 * window.innerHeight;
+        const target =
+          window.scrollY > trigger
+            ? Math.max(-90, Math.min(0, (window.scrollY - trigger) / 2.5 - 90))
+            : -90;
+
+        current[i] += (target - current[i]) * EASE;
+        const rotation = current[i];
+
+        if (rotation >= -0.4) {
+          el.style.transform = "perspective(200px) rotateX(0deg)";
+          el.style.opacity = "1";
+        } else {
+          el.style.transform = `perspective(200px) rotateX(${-rotation}deg) scale(${1 + rotation / 90})`;
+          el.style.opacity = `${Math.max(0, 1 + rotation / 90)}`;
         }
       });
+      raf = requestAnimationFrame(tick);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    raf = requestAnimationFrame(tick);
 
-    return () => {
-      // Cleanup the event listener on component unmount
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => cancelAnimationFrame(raf);
   }, []); // Empty dependency array ensures the effect runs once after the initial render
 
   return (
@@ -107,18 +80,18 @@ export default function Home() {
           <img className="mountain-img" src={"/mountainsbg.png"} alt="colomountains background" />
           <div className="products-container">
             <h2 className="products-title">LET YOUR MIND LOOSE</h2>
-            <Link href="https://passimal.201.studio" passHref={true}>
+            <Link href="/lifelist" passHref={true}>
               <div className="product-col">
                 <img
-                  ref={imageRef}
-                  className="wordreach-tile"
-                  src={"/passimal-screen.svg"}
-                  alt="product screen1"
+                  ref={imageRef4}
+                  className="lifelist-tile"
+                  src={"/lifelist-screen.png"}
+                  alt="Lifelist app screen"
                 />
                 <div className="product-text">
-                  <span className="product-title product-title-side">Passimal</span>
+                  <span className="product-title">Lifelist</span>
                   <span className="product-desc">
-                    A fun and informative way of understanding how to improve your password.
+                    Browse curated lists, tick off real-world experiences, and earn medals.
                   </span>
                 </div>
               </div>
@@ -135,6 +108,22 @@ export default function Home() {
                   <span className="product-title">WordReach</span>
                   <span className="product-desc">
                     Step into the exciting world of WordReach - the online word-building challenge!
+                  </span>
+                </div>
+              </div>
+            </Link>
+            <Link href="https://passimal.201.studio" passHref={true}>
+              <div className="product-col">
+                <img
+                  ref={imageRef}
+                  className="wordreach-tile"
+                  src={"/passimal-screen.svg"}
+                  alt="product screen1"
+                />
+                <div className="product-text">
+                  <span className="product-title product-title-side">Passimal</span>
+                  <span className="product-desc">
+                    A fun and informative way of understanding how to improve your password.
                   </span>
                 </div>
               </div>
