@@ -8,15 +8,14 @@ const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
 // Written to match the app's actual behaviour (verified: no analytics/tracking/
 // crash SDKs; data is Google OAuth identity + saved lists + completions in Supabase).
 //
-// BEFORE PUBLISHING, confirm these three items:
-//   1. EFFECTIVE_DATE below = the real publish date.
-//   2. Supabase hosting region (used in "International data transfers").
-//   3. In-app account deletion (ticket 201-114) — if it has NOT shipped, the
-//      "Deleting your data" section already leads with the email route, which is
-//      accurate. Once 201-114 ships, add the in-app step there.
+// Confirmed items (kept for history):
+//   1. EFFECTIVE_DATE = publish date; bumped when the policy materially changes.
+//   2. Supabase hosting region: EU West 1 (Ireland), stated in sections 6 and 9.
+//   3. In-app account deletion (ticket 201-114) shipped — the "Deleting your
+//      data" section leads with the in-app Settings route, email as a fallback.
 // A light legal review is recommended given Apple's prior scrutiny.
 
-const EFFECTIVE_DATE = "22 June 2026";
+const EFFECTIVE_DATE = "3 July 2026";
 
 export default function LifelistPrivacyPolicy() {
   return (
@@ -137,9 +136,10 @@ export default function LifelistPrivacyPolicy() {
           <Section title="6. How your data is stored and secured">
             <p className="mb-4">
               Your account and activity are stored in our backend, which is hosted by Supabase, a
-              third-party cloud platform that provides our database and authentication. Data is
-              transmitted over encrypted (HTTPS/TLS) connections, and access to your records is
-              restricted so that only your authenticated account can read or change them.
+              third-party cloud platform that provides our database and authentication. Our Supabase
+              infrastructure is located in the European Union (Ireland). Data is transmitted over
+              encrypted (HTTPS/TLS) connections, and access to your records is restricted so that
+              only your authenticated account can read or change them.
             </p>
             <p>
               While no method of electronic storage is completely secure, we take reasonable technical
@@ -178,10 +178,12 @@ export default function LifelistPrivacyPolicy() {
 
           <Section title="9. International data transfers">
             <p>
-              Our service providers may store and process data on servers located outside the United
-              Kingdom or European Economic Area. Where data is transferred internationally, we rely on
-              appropriate safeguards (such as standard contractual clauses or an adequacy decision) to
-              ensure your data receives an equivalent level of protection.
+              Your personal data is hosted within the European Economic Area (in Ireland). For users
+              in the United Kingdom, the EEA is covered by UK &quot;adequacy&quot; regulations, meaning
+              it provides an equivalent level of data protection, so no additional transfer safeguards
+              are required. Should we ever move data outside the United Kingdom or EEA, we would rely on
+              appropriate safeguards — such as standard contractual clauses or an adequacy decision — to
+              ensure your data continues to receive an equivalent level of protection.
             </p>
           </Section>
 
@@ -215,16 +217,17 @@ export default function LifelistPrivacyPolicy() {
 
           <Section title="11. Deleting your data">
             <p>
-              You can request deletion of your account and all associated data at any time by emailing
-              us at{" "}
+              You can delete your account and all associated data at any time directly in the App, from
+              the Settings screen. Deleting your account immediately and permanently removes your
+              identity and all of your saved lists and completions from our systems, and cannot be
+              undone. If you would prefer, you can instead request deletion by emailing us at{" "}
               <a
                 href="mailto:apps@201.studio"
                 className="font-medium text-[#822B8C] underline underline-offset-2"
               >
                 apps@201.studio
               </a>
-              . We will action your request within 30 days. Deleting your account removes your identity
-              and all of your saved lists and completions from our systems.
+              , and we will action your request within 30 days.
             </p>
           </Section>
 
