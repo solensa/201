@@ -6,7 +6,8 @@ const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 // Lifelist privacy policy — stable URL /lifelist/privacy. Owned by ticket 201-113.
 // Written to match the app's actual behaviour (verified: no analytics/tracking/
-// crash SDKs; data is Google OAuth identity + saved lists + completions in Supabase).
+// crash SDKs; data is Google / Apple sign-in identity + saved lists + completions in
+// Supabase). Sign in with Apple is offered on iOS only.
 //
 // Confirmed items (kept for history):
 //   1. EFFECTIVE_DATE = publish date; bumped when the policy materially changes.
@@ -15,7 +16,7 @@ const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
 //      data" section leads with the in-app Settings route, email as a fallback.
 // A light legal review is recommended given Apple's prior scrutiny.
 
-const EFFECTIVE_DATE = "3 July 2026";
+const EFFECTIVE_DATE = "4 October 2026";
 
 export default function LifelistPrivacyPolicy() {
   return (
@@ -74,9 +75,10 @@ export default function LifelistPrivacyPolicy() {
             <ul className="list-disc space-y-2 pl-5">
               <li>
                 <span className="font-medium text-[#111111]">Account identity.</span> When you sign in
-                with Google, we receive basic profile information from Google — typically your name,
-                email address, and a unique account identifier — which we use to create and identify
-                your account.
+                with Google or with Apple, we receive basic profile information from that provider —
+                typically your name, email address, and a unique account identifier — which we use to
+                create and identify your account. If you use Sign in with Apple and choose to hide
+                your email, we receive the private relay address Apple provides instead.
               </li>
               <li>
                 <span className="font-medium text-[#111111]">Your saved lists.</span> The curated
@@ -164,6 +166,11 @@ export default function LifelistPrivacyPolicy() {
                 <span className="font-medium text-[#111111]">Google Sign-In</span> — used to
                 authenticate you. Your use of Google Sign-In is also subject to Google&apos;s own
                 privacy policy.
+              </li>
+              <li>
+                <span className="font-medium text-[#111111]">Sign in with Apple</span> — offered on
+                iOS as an alternative way to authenticate you. Your use of Sign in with Apple is also
+                subject to Apple&apos;s own privacy policy.
               </li>
               <li>
                 <span className="font-medium text-[#111111]">Supabase</span> — hosts our database and
