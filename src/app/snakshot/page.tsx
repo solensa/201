@@ -4,8 +4,8 @@ import { useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const IOS_STORE_URL = "https://apps.apple.com/app/snakshot/idXXXXXXXXX"; // TODO: Update with actual App Store URL
-const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.studio201.snakshot"; // TODO: Update with actual Play Store URL
+const IOS_STORE_URL = "https://apps.apple.com/gb/app/snakshot/id6754289762";
+const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.studio201.snakshot";
 
 function detectDevice() {
   const ua = typeof navigator !== "undefined" ? navigator.userAgent || navigator.vendor : "";
