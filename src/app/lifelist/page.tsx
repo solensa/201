@@ -8,8 +8,10 @@ import { Fraunces, Outfit } from "next/font/google";
 const fraunces = Fraunces({ subsets: ["latin"], weight: ["900"] });
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
-const IOS_STORE_URL = "https://apps.apple.com/app/lifelist/idXXXXXXXXX"; // TODO: Update with actual App Store URL
-const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.lifelist.app"; // TODO: Update with actual Play Store URL
+// Listed as "Ultimate LifeList" on the App Store ("Lifelist" was taken there).
+const IOS_STORE_URL = "https://apps.apple.com/app/apple-store/id6819072716?pt=127836000&ct=website&mt=8";
+const ANDROID_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.studio201.lifelist&referrer=utm_source%3Dwebsite%26utm_medium%3Dlink%26utm_campaign%3Dlifelist";
 
 // Bold Editorial brand palette (Figma: Lifelist / Foundations).
 // Diagonal sunset stripes — hard-edged bands matching the app splash header
@@ -76,7 +78,7 @@ export default function LifelistLanding() {
             >
               <Image
                 src="/apple-store-dark.svg"
-                alt="Download on the App Store"
+                alt="Download Ultimate LifeList on the App Store"
                 width={200}
                 height={60}
                 className="h-auto w-full"
@@ -90,7 +92,7 @@ export default function LifelistLanding() {
             >
               <Image
                 src="/google-play-dark.svg"
-                alt="Get it on Google Play"
+                alt="Get Lifelist on Google Play"
                 width={200}
                 height={60}
                 className="h-auto w-full"
